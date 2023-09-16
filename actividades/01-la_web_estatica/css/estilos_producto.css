@@ -1,0 +1,50 @@
+#portada{
+  background-color: #F2B5D4;
+}
+#navegacion{
+  background-color: #5A855E;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+#menu_productos{
+  background-color: #B2F7EF;
+  letter-spacing: 1px;
+}
+.contenedor {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+}
+.contenedor img {
+  max-width: 80%; 
+  max-height: 80%; 
+}
+.encabezados 
+{
+  padding-left: 5%;
+  padding-top: 1%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}      
+.contenedor2 {
+ display: flex; 
+}
+
+.columna {
+  flex: 1; 
+  padding: 10px; 
+}
+.boton {
+  margin: 3%;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10%;
+  padding: 15px 25px;
+  cursor: pointer; 
+  font-size: 16px; 
+}
+
+.boton:hover {
+  background-color: #333; 
+}
+

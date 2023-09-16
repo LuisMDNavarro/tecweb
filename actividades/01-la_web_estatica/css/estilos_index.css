@@ -1,0 +1,15 @@
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+#portada{
+    background-color: #F2B5D4;
+}
+#navegacion{
+    background-color: #5A855E;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+#menu_productos{
+    background-color: #B2F7EF;
+    letter-spacing: 1px;
+}
