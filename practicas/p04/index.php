@@ -167,6 +167,10 @@
             echo "Vehiculo solicitado: ";
             echo "[$matricula] => ";
             print_r($datos[$matricula]); 
+            echo '<br>';
+            echo '<br>';
+            echo "Todos los vehiculos:: ";
+            print_r($datos); 
     ?>
 </body>
 </html>
