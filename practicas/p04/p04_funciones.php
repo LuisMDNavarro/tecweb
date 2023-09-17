@@ -40,4 +40,18 @@ function aleatorios(){
     $numeros =$contador * 3;
     echo "$numeros números obtenidos en $contador iteraciones";
 }
+
+function enteromultipo($dado){
+    $encontrar = rand(0,1000);
+    while($encontrar%$dado !=0)
+    {
+        $encontrar = rand(0,1000);
+    }
+    echo "El numero usando while es $encontrar";
+    echo '<br>';
+    do{
+        $encontrar = rand(0,1000);
+    }while($encontrar%$dado !=0);
+    echo "El numero usando do-while es $encontrar";
+}
 ?>
