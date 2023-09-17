@@ -54,4 +54,25 @@ function enteromultipo($dado){
     }while($encontrar%$dado !=0);
     echo "El numero usando do-while es $encontrar";
 }
+
+function arreglo(){
+    $abecedario;
+    for($i=97; $i<123; $i++)
+    {
+        $abecedario[$i] = chr($i);
+    }
+    echo "<table>";
+    echo "<tr>
+    <th>Numero </th>
+    <th>Letra</th>
+        </tr>";
+    foreach($abecedario as $numero => $letra)
+    {
+        echo "<tr>
+        <td>[$numero] =></td>
+        <td>$letra</td>
+    </tr>";
+    }
+    echo "</table>";
+}
 ?>
