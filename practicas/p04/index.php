@@ -40,5 +40,28 @@
     <?php
         echo arreglo();
     ?>
+    <h2>Ejercicio 5</h2>
+    <p>Usar las variables $edad y $sexo en una instrucción if para identificar una persona de
+    sexo “femenino”, cuya edad oscile entre los 18 y 35 años y mostrar un mensaje de
+    bienvenida apropiado. </p>
+    <?php
+    $edad = $_POST["edad"];
+    $sexo = $_POST["sexo"];
+    if($sexo =="Femenino")
+    {
+        if($edad >=18 && $edad <= 35)
+        {
+            echo "Bienvenida, usted está en el rango de edad y el genero permitido.";
+        }
+        else
+        {
+            echo "No cumple con la edad requerida";
+        }
+    }
+    else
+    {
+        echo "No cumple con el sexo solicitado";
+    }
+    ?>
 </body>
 </html>
