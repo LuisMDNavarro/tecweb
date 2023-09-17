@@ -63,5 +63,110 @@
         echo "No cumple con el sexo solicitado";
     }
     ?>
+    <h2>Ejercicio 6</h2>
+    <p>Crea en código duro un arreglo asociativo que sirva para registrar el parque vehicular de
+    una ciudad. </p>
+    <h3>Vehiculo</h3>
+    <?php
+    $matricula = $_POST["matricula"];
+    $datos = array (
+        
+                //Sedan
+                'AAA1111' => array('Auto' => array('marca' => "HONDA",
+                'modelo' => 2020, 'tipo' => "sedan"), 'Propietario' => array(
+                'nombre' => "Juan Perez",
+                'ciudad' => "Puebla, pue.", 
+                'direccion' => "C. 63 B Ote.")),
+                
+                'BBB1111' => array('Auto' => array('marca' => "VOLVO",
+                'modelo' => 2019, 'tipo' => "sedan"), 'Propietario' => array(
+                'nombre' => "Carlos Juarez", 
+                'ciudad' => "Puebla, pue.",
+                'direccion' => "C. 12 Sur")),
+            
+                'CCC1111' => array('Auto' => array('marca' => "NISSAN",
+                'modelo' => 2018, 'tipo' => "sedan"), 'Propietario' => array(
+                'nombre' => "Enrique Guzman", 
+                'ciudad' => "Puebla, pue.",
+                'direccion' => "Av. 63-A Ote")),
+            
+                'DDD1111' => array('Auto' => array('marca' => "FORD",
+                'modelo' => 2021, 'tipo' => "sedan"), 'Propietario' => array(
+                'nombre' => "Uriel Lopez", 
+                'ciudad' => "Puebla, pue.",
+                'direccion' => "C. 10 Sur")),
+            
+                'EEE1111' => array('Auto' => array('marca' => "CHEVROLET",
+                'modelo' => 2020, 'tipo' => "sedan"), 'Propietario' => array(
+                'nombre' => "Roberto Reyes",
+                'ciudad' => "Puebla, pue.", 
+                'direccion' => "C. 8 B Sur")),
+
+                //Hachback
+                'AAA2222' => array('Auto' => array('marca' => "MERCEDEZ",
+                'modelo' => 2022, 'tipo' => "hachback"), 'Propietario' => array(
+                'nombre' => "Alfonso Esparza",
+                'ciudad' => "Veracruz, Ver.", 
+                'direccion' => "Calle Navegantes 327")),
+            
+                'BBB2222' => array('Auto' => array('marca' => "CHEVROLET",
+                'modelo' => 2020, 'tipo' => "hachback"), 'Propietario' => array(
+                'nombre' => "Rubi Mendez",
+                'ciudad' => "Veracruz, Ver.", 
+                'direccion' => "Av Cristóbal Colón")),
+                
+                'CCC2222' => array('Auto' => array('marca' => "SEAT",
+                'modelo' => 2022, 'tipo' => "hachback"), 'Propietario' => array(
+                'nombre' => "Maria Perez",
+                'ciudad' => "Veracruz, Ver.", 
+                'direccion' => "Valencia")),
+                
+                'DDD2222' => array('Auto' => array('marca' => "RENAULT",
+                'modelo' => 2022, 'tipo' => "hachback"), 'Propietario' => array(
+                'nombre' => "Noe Juarez",
+                'ciudad' => "Veracruz, Ver.", 
+                'direccion' => "Av. Ejército Mexicano Ote.")),
+
+                'EEE2222' => array('Auto' => array('marca' => "HYUNDAI",
+                'modelo' => 2019, 'tipo' => "hachback"), 'Propietario' => array(
+                'nombre' => "Diego Mendoza",
+                'ciudad' => "Veracruz, Ver.", 
+                'direccion' => "C. Cándido Aguilar 747")),
+
+                //Camioneta
+                'AAA3333' => array('Auto' => array('marca' => "SUBARU",
+                'modelo' => 2016, 'tipo' => "camioneta"), 'Propietario' => array(
+                'nombre' => "Luis Ortega",
+                'ciudad' => "Xicohténcatl, tlax.", 
+                'direccion' => "Av Independencia 58A")),
+
+                'BBB3333' => array('Auto' => array('marca' => "SUSUKI",
+                'modelo' => 2022, 'tipo' => "camioneta"), 'Propietario' => array(
+                'nombre' => "Rodrigo Perez",
+                'ciudad' => "Xicohténcatl, tlax.", 
+                'direccion' => "Av. Tlahuicole")),
+
+                'CCC3333' => array('Auto' => array('marca' => "DODGE",
+                'modelo' => 2017, 'tipo' => "camioneta"), 'Propietario' => array(
+                'nombre' => "David Ramos",
+                'ciudad' => "Xicohténcatl, tlax.", 
+                'direccion' => "Guillermo Valle 111")),
+
+                'DDD3333' => array('Auto' => array('marca' => "HONDA",
+                'modelo' => 2020, 'tipo' => "camioneta"), 'Propietario' => array(
+                'nombre' => "Julian Palacios",
+                'ciudad' => "Xicohténcatl, tlax.", 
+                'direccion' => "C. Texcaltipac 26")),
+
+                'EEE3333' => array('Auto' => array('marca' => "PEUGEOT",
+                'modelo' => 2018, 'tipo' => "camioneta"), 'Propietario' => array(
+                'nombre' => "Daniel Toxqui",
+                'ciudad' => "Xicohténcatl, tlax.", 
+                'direccion' => "Priv. del Nte., Ocotlán")),
+            );
+            echo "Vehiculo solicitado: ";
+            echo "[$matricula] => ";
+            print_r($datos[$matricula]); 
+    ?>
 </body>
 </html>
