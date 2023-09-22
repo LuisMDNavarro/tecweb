@@ -25,12 +25,11 @@
         echo '<li>$_element1 es válida porque inicia con guión bajo.</li>';
         echo '</ul>';
     ?>
-    <br>
     <h2>Ejercicio 2</h2>
     <p>Proporcionar los valores de $a, $b, $c como sigue: </p>
     <p>  $a = "ManejadorSQL";</p>
     <p>$b = 'MySQL'; </p>
-    <p>$c = &$a;</p>
+    <p>$c = &amp;$a;</p>
     <p>a. Ahora muestra el contenido de cada variable</p>
     <?php
     $a = "ManejadorSQL";
@@ -42,7 +41,7 @@
     ?>
     <p>b. Agrega al código actual las siguientes asignaciones: </p>
     <p>$a = "PHP server";</p>
-    <p>$b = &$a;</p>
+    <p>$b = &amp;$a;</p>
     <p>c. Vuelve a mostrar el contenido de cada uno</p>
     <?php
     $a = "ManejadorSQL";
@@ -60,13 +59,12 @@
     <p>La variable "c" estaba enlazada a la variable "a" y en el segundo bloque 
     de asignaciones se enlazo lo variable "b" con la variable "a" por lo que al volver a 
     asignar un valor diferente a la variable "a" este afecta las demas</p>
-    <br>
     <h2>Ejercicio 3</h2>
     <p>Muestra el contenido de cada variable inmediatamente después de cada asignación,
     verificar la evolución del tipo de estas variables (imprime todos los componentes de los
     arreglo):</p>
     <p>$a = “PHP5”;</p>
-    <p>$z[] = &$a;</p>
+    <p>$z[] = &amp;$a;</p>
     <p>$b = “5a version de PHP”;</p>
     <p>$c = $b*10;</p>
     <p>$a .= $b;</p>
@@ -89,7 +87,6 @@
     var_dump($z);
     //unset($a,$b,$c);
     ?>
-     <br>
     <h2>Ejercicio 4</h2>
     <p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
     la matriz $GLOBALS o del modificador global de PHP.</p>
@@ -101,7 +98,6 @@
     echo "<br>$c";
     unset($a,$b,$c);
     ?>
-    <br>
     <h2>Ejercicio 5</h2>
     <p>Dar el valor de las variables $a, $b, $c al final del siguiente script:</p>
     <p>$a = “7 personas”;</p>
@@ -118,7 +114,6 @@
     echo 'Valor de $c: '.$c;
     unset($a,$b,$c);
     ?>
-    <br>
     <h2>Ejercicio 6</h2>
     <p>Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas
     usando la función var_dump(datos).</p>
@@ -155,7 +150,6 @@
     echo "<br>$f";
     unset($a, $b, $c, $d, $e, $f);
     ?>
-    <br>
     <h2>Ejercicio 7</h2>
     <p>Usando la variable predefinida $_SERVER, determina lo siguiente:</p>
     <p>a. La versión de Apache y PHP,</p>
@@ -169,5 +163,10 @@
     echo '<br>Idioma del navegador (cliente): ';
     echo $_SERVER['HTTP_ACCEPT_LANGUAGE'];
     ?>
+    <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+  </p>
+  
 </body>
 </html>
