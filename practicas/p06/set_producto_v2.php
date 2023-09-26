@@ -21,7 +21,7 @@ if(!empty($nombre) && !empty($marca) && !empty($modelo) && !empty($precio) && !e
         {
             if(preg_match('/^[^\s]+$/', $imagen))
             {
-                $sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', '{$unidades}', 'img/$imagen')";
+                $sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', '{$unidades}', 'img/$imagen', '0')";
                 if ( $link->query($sql) ) 
                 {
                     echo 'Producto insertado con: ';
