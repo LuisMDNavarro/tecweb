@@ -20,28 +20,20 @@
     <p>Ingresa los datos del producto a actualizar</p>
     <form id = "formularioProducto" onsubmit ="" action ="actualizar_producto.php" method ="post">
         <ul> 
-            <li><label for ="id">ID: </label>
-            <select id="id" name = "id">
-                <?php 
-                 while ($fila = $resultado->fetch_assoc()) {
-                    $id = $fila['id'];
-                    echo "<option value='$id'>$id</option>";
-                }
-                $resultado->free();
-                ?>
-            </select></li>
-            <li><label for ="nombre">Nombre:</label><input type ="text" name ="nombre"  id ="nombre" ></li>
+            <li><label for ="id">ID:</label><input type ="text" name ="id"  id ="id"  value="<?= !empty($_POST['id'])?$_POST['id']:$_GET['id'] ?>" readonly></li>
+            <li><label for ="nombre">Nombre:</label><input type ="text" name ="nombre"  id ="nombre"  value="<?= !empty($_POST['nombre'])?$_POST['nombre']:$_GET['nombre'] ?>"></li>
             <li><label for ="marca">Marca:</label>
             <select id="marca" name="marca">
+                <option value="<?= !empty($_POST['marca'])?$_POST['marca']:$_GET['marca'] ?>"><?= !empty($_POST['marca'])?$_POST['marca']:$_GET['marca'] ?></option>
                 <option value="Ubisoft">Ubisoft</option>
                 <option value="Activision Blizzart">Activision Blizzart</option>
                 <option value="Epic Games">Epic Games</option>
             </select></li>
-            <li><label for ="modelo">Modelo:</label><input type ="text" name ="modelo"  id ="modelo"></li>
-            <li><label for ="precio">Precio:</label><input type ="number" name ="precio"  id ="precio" placeholder="Con dos decimales: 0.00"></li>
-            <li><label for ="detalles">Detalles:</label><input type ="text" name ="detalles"  id ="detalles" ></li>
-            <li><label for ="unidades">Unidades:</label><input type ="number" name ="unidades"  id ="unidades" ></li>
-            <li><label for ="img">Ruta de la imagen:</label><input type ="text" name ="img"  id ="img"  placeholder="Ej: img/imagen.png" ></li>
+            <li><label for ="modelo">Modelo:</label><input type ="text" name ="modelo"  id ="modelo" value="<?= !empty($_POST['modelo'])?$_POST['modelo']:$_GET['modelo'] ?>"></li>
+            <li><label for ="precio">Precio:</label><input type ="number" name ="precio"  id ="precio" placeholder="Con dos decimales: 0.00" value="<?= !empty($_POST['precio'])?$_POST['precio']:$_GET['precio'] ?>"></li>
+            <li><label for ="detalles">Detalles:</label><input type ="text" name ="detalles"  id ="detalles" value="<?= !empty($_POST['detalles'])?$_POST['detalles']:$_GET['detalles'] ?>"></li>
+            <li><label for ="unidades">Unidades:</label><input type ="number" name ="unidades"  id ="unidades" value="<?= !empty($_POST['unidades'])?$_POST['unidades']:$_GET['unidades'] ?>"></li>
+            <li><label for ="img">Ruta de la imagen:</label><input type ="text" name ="img"  id ="img"  placeholder="Ej: img/imagen.png" value="<?= !empty($_POST['img'])?$_POST['img']:$_GET['img'] ?>"></li>
     </ul>
     <p>
         <input type="submit" value="Registrar">

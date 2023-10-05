@@ -20,6 +20,7 @@ if ($link->connect_errno)
 $sql = "UPDATE productos SET  nombre = '$nombre', marca = '$marca', modelo = '$modelo',  precio = '$precio', detalles = '$detalles', unidades = '$unidades', imagen = '$imagen'  WHERE id= $id ";
 if(mysqli_query($link, $sql)){
     echo "Registro actualizado.";
+   header("Location: http://localhost/tecweb/practicas/p07/get_productos_vigentes_v2.php");
 } else {
     echo "ERROR: No se ejecuto $sql. " . mysqli_error($link);
 }

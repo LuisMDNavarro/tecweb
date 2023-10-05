@@ -30,17 +30,18 @@
             function show() {
                 var rowId = event.target.parentNode.parentNode.id;
                 var data = document.getElementById(rowId).querySelectorAll(".row-data");
-                var name = data[0].innerHTML;
-                var marca = data[1].innerHTML;
-				var modelo = data[2].innerHTML;
-				var precio = data[3].innerHTML;
-				var unidades = data[4].innerHTML;
-				var detalles = data[5].innerHTML;
-				var imagen = data[6].innerHTML;
+                var id = data[0].innerHTML;
+                var name = data[1].innerHTML;
+                var marca = data[2].innerHTML;
+				var modelo = data[3].innerHTML;
+				var precio = data[4].innerHTML;
+				var unidades = data[5].innerHTML;
+				var detalles = data[6].innerHTML;
+				var imagen = data[7].innerHTML;
 
-				alert("Name: " + name + "\nMarca: " + marca+ "\nModelo: " + modelo+ "\nPrecio: " + precio+ "\nUnidades: " + unidades+ "\nDetalles: " + detalles+ "\nImagen: " + imagen);
+				alert("ID: " + id +"\nName: " + name + "\nMarca: " + marca+ "\nModelo: " + modelo+ "\nPrecio: " + precio+ "\nUnidades: " + unidades+ "\nDetalles: " + detalles+ "\nImagen: " + imagen);
 
-                send2form(name, modelo,marca,precio,unidades, detalles, imagen);
+                send2form(id,name, modelo,marca,precio,unidades, detalles, imagen);
             }
         </script>
 	<head>
@@ -73,7 +74,7 @@
                     <?php
                     foreach ($row as $fila) {
 					echo "<tr id = '" . $fila['id'] . "'>";
-						echo "<th scope='row'>" . $fila['id'] . " </th>";
+						echo "<th scope='row' class='row-data'>" . $fila['id'] . " </th>";
 						echo "<td class='row-data'>" .$fila['nombre']. "</td>";
 						echo "<td class='row-data'>".$fila['marca']."</td>";
 						echo "<td class='row-data'>" .$fila['modelo'] ."</td>";
@@ -88,8 +89,14 @@
 				</tbody>
 			</table>
 			<script>
-            function send2form(name, modelo,marca,precio,unidades, detalles, imagen) {
+            function send2form(id,name, modelo,marca,precio,unidades, detalles, imagen) {
                 var form = document.createElement("form");
+
+                var IDIn = document.createElement("input");
+                IDIn.type = 'text';
+                IDIn.name = 'id';
+                IDIn.value = id;
+                form.appendChild(IDIn);
 
                 var nombreIn = document.createElement("input");
                 nombreIn.type = 'text';
@@ -135,7 +142,7 @@
                 console.log(form);
 
                 form.method = 'POST';
-                form.action = 'http://localhost/tecweb/practicas/p07/formulario_productos_v2.php';  
+                form.action = 'http://localhost/tecweb/practicas/p07/formulario_productos_v3.php';  
 
                 document.body.appendChild(form);
                 form.submit();
