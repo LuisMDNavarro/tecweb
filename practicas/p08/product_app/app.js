@@ -75,6 +75,72 @@ function agregarProducto(e) {
     var finalJSON = JSON.parse(productoJsonString);
     // SE AGREGA AL JSON EL NOMBRE DEL PRODUCTO
     finalJSON['nombre'] = document.getElementById('name').value;
+    
+    entrar = true;
+    regexp = /^[a-zA-Z0-9]+$/;
+
+            //Nombre
+            if( finalJSON['nombre'].length < 1){
+                alert("Se requiere ingresar un nombre");
+                entrar = false;
+            }
+            if( finalJSON['nombre'].length > 100){
+                alert("El nombre debe tener menos de 100 caracteres");
+                entrar = false;
+            }
+
+            //Marca
+            if( finalJSON['marca'].length < 1){
+                alert("Se requiere ingresar una marca");
+                entrar = false;
+            }
+
+            //Modelo
+            if( finalJSON['modelo'].length < 1){
+                alert("Se requiere ingresar un modelo");
+                entrar = false;
+            }
+            if(!regexp.test(finalJSON['modelo'])){
+                alert("El modelo debe ser alfanumerico");
+                entrar = false;
+            }
+            if(finalJSON['modelo'].length > 25){
+                alert("El modelo ebe tener menos de 25 caracteres");
+                entrar = false;
+            }
+
+            //Precio
+            if(finalJSON['precio'].length < 1){
+                alert("Se requiere ingresar un precio");
+                entrar = false;
+            }
+            if(finalJSON['precio'] < 99.99){
+                alert("El precio debe ser mayor a 99.99");
+                entrar = false;
+            }
+
+            //Detalles
+            if(finalJSON['detalles'].length > 250){
+                alert("Los detalles deben ser menores a 250 caracteres");
+                entrar = false;
+            }
+
+            //Unidades
+            if(finalJSON['unidades'].length < 1){
+                alert("Se requiere ingresar unidades");
+                entrar = false;
+            }
+            if(finalJSON['unidades'] < 0){
+                alert("Las unidades deben ser mayores o igual a 0");
+                entrar = false;
+            }
+
+            //Imagen
+            if(finalJSON['imagen'].length < 1){
+                finalJSON['imagen'] ='img/imagen.png';
+            }
+    
+    
     // SE OBTIENE EL STRING DEL JSON FINAL
     productoJsonString = JSON.stringify(finalJSON,null,2);
 
@@ -86,9 +152,12 @@ function agregarProducto(e) {
         // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
         if (client.readyState == 4 && client.status == 200) {
             console.log(client.responseText);
+            window.alert(client.responseText);
         }
     };
-    client.send(productoJsonString);
+    if(entrar){ 
+        client.send(productoJsonString);    
+    }
 }
 
 // SE CREA EL OBJETO DE CONEXIÓN COMPATIBLE CON EL NAVEGADOR
