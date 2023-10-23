@@ -21,7 +21,7 @@ function init() {
 }
 
 $(document).ready(function(){
-
+    let edit = false;
     //console.log('jQuery is working');
     $('#product-result').hide();
     fetchProductos();
@@ -94,14 +94,14 @@ $(document).ready(function(){
             marca: datos["marca"],
             detalles: datos["detalles"],
             imagen: datos["imagen"],
-            id: $('#product_Id').val()
+            id: $('#productId').val()
         };
-        //console.log(postData);
-
+        console.log(postData);
+        let url = edit === false ? 'backend/product-add.php' : 'backend/product-edit.php';
         productoJSON = JSON.stringify(postData, null, 2);
 
-        $.post('backend/product-add.php', productoJSON, function (response) {
-            //console.log(response);
+        $.post(url, productoJSON, function (response) {
+            console.log(response);
             let res = JSON.parse(response);
             fetchProductos();
             //$('#product-form').trigger('reset');
@@ -132,7 +132,9 @@ $(document).ready(function(){
                     template += `
                     <tr productId="${producto.id}">
                                 <td>${producto.id}</td>
-                                <td>${producto.nombre}</td>
+                                <td>
+                                    <a href="#" class="productItem">${producto.nombre}</a>
+                                </td>
                                 <td><ul>${descripcion}</ul></td>
                                 <td>
                                     <button class="product-delete btn btn-danger">
@@ -166,5 +168,30 @@ $(document).ready(function(){
 
     })
 
+    $(document). on('click', '.productItem', function(){
+       //console.log('Editar');
+       let element = $(this)[0].parentElement.parentElement;
+       let id = $(element).attr('productId');
+       //console.log(id);
+       $.post('backend/product-single.php', {id}, function(response) {
+        //console.log(response);
+        const producto = JSON.parse(response);
+        //console.log(producto);
+        $('#name').val(producto[0].nombre);
+        $('#productId').val(producto[0].id);
 
+        var atributosobj = {
+            "precio": producto[0].precio,
+            "unidades": producto[0].unidades,
+            "modelo": producto[0].modelo,
+            "marca": producto[0].marca,
+            "detalles": producto[0].detalles,
+            "imagen": producto[0].imagen
+        };
+       // console.log(atributosobj);
+        var objstring = JSON.stringify(atributosobj, null, 2);
+        $('#description').val(objstring);
+        edit = true;
+       })
+    });
 });
