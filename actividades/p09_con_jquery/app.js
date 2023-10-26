@@ -10,6 +10,7 @@ var baseJSON = {
 
 $(document).ready(function(){
     let edit = false;
+   let entrar = true;
     //console.log('jQuery is working');
     $('#product-result').hide();
     fetchProductos();
@@ -70,7 +71,121 @@ $(document).ready(function(){
         } 
     });
 
+    $('#name').keyup(function(e){
+        if($('#name').val()){
+            let name = $('#name').val();
+            
+            $.ajax({
+                url: 'backend/product-single-by-name.php',
+                type: 'GET', 
+                data: {name},
+                success: function(response){
+                    console.log(response);
+                    let res =JSON.parse(response);
+                    let valido = '';
+                    valido += `
+                        <li style="list-style: none;">status: ${res.status}</li>
+                        <li style="list-style: none;">message: ${res.message}</li>
+                    `;
+    
+                    $('#container').html(valido);
+                    //console.log(container);
+                    $('#product-result').show();
+                }
+    
+            });
+        }
+    });
+
+    $(document).on('blur', '.validar', function(){
+
+        entrar = false;
+
+        let nombre = $('#name').val();
+        let precio = $('#precio').val(); 
+        let unidades = $('#unidades').val();
+        let modelo = $('#modelo').val();
+        let marca = $('#marca').val();
+        let detalles = $('#detalles').val();
+        let img = $('#img').val();
+ 
+        regexp = /^[a-zA-Z0-9]+$/;
+ 
+        let alert=" "
+ 
+        //Nombre
+        if(nombre.length < 1){
+         alert += "Se requiere ingresar un nombre <br/>";
+         entrar = true;
+     }
+     if(nombre.length > 100){
+         alert += "El nombre debe tener menos de 100 caracteres <br/>";
+         entrar = true;
+     }
+ 
+     //Marca
+     if(marca == 0){
+         alert += "Se requiere ingresar una marca <br/>";
+         entrar = true;
+     }
+ 
+     //Modelo
+     if(modelo.length < 1){
+         alert += "Se requiere ingresar un modelo <br/>";
+         entrar = true;
+     }
+     if(!regexp.test(modelo)){
+         alert +="El modelo debe ser alfanumerico <br/>"
+         entrar = true;
+     }
+     if(modelo.length > 25){
+         alert += "El modelo ebe tener menos de 25 caracteres <br/>";
+         entrar = true;
+     }
+ 
+     //Precio
+     if(precio.length < 1){
+         alert += "Se requiere ingresar un precio <br/>";
+         entrar = true;
+     }
+     if(precio < 99.99){
+         alert += "El precio debe ser mayor a 99.99 <br/>";
+         entrar = true;
+     }
+ 
+     //Detalles
+     if(detalles.length > 250){
+         alert += "Los detalles deben ser menores a 250 caracteres <br/>";
+         entrar = true;
+     }
+ 
+     //Unidades
+     if(unidades.length < 1){
+         alert += "Se requiere ingresar unidades <br/>";
+         entrar = true;
+     }
+     if(unidades < 0){
+         alert += "Las unidades deben ser mayores o igual a 0 <br/>";
+         entrar = true;
+     }
+ 
+     //Imagen
+     if(img.length < 1){
+         document.getElementById("img").value='img/imagen.png';
+     }
+     if(entrar){
+        $('#container').html(alert);
+        $('#product-result').show();
+    }
+    });
+
     $('#product-form').submit(function(e){
+
+        if(entrar){
+            $('#container').html('Llena o corrige los campos');
+        $('#product-result').show();
+        }
+         else {
         //console.log('submiting');
         const postData = {
             nombre: $('#name').val(),
@@ -100,6 +215,7 @@ $(document).ready(function(){
             fetchProductos();
             $('#product-form').trigger('reset');
         });
+     }
         e.preventDefault();
     });
 
@@ -159,7 +275,7 @@ $(document).ready(function(){
        })
         }
 
-    })
+    });
 
     $(document). on('click', '.productItem', function(){
        //console.log('Editar');
