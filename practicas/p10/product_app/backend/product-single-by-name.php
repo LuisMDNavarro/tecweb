@@ -1,0 +1,8 @@
+<?php
+    use API\Read\Leer;
+     require_once __DIR__ . '/API/Productos.php';
+     
+    $productos = new Leer('marketzone');
+    $productos->singleByName($_GET['name']);
+    echo $productos->getResponse();
+?>
