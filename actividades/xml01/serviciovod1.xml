@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CatalogoVOD>
+    <cuenta>
+        <correo>carlosduti123@gmail.com</correo>
+        <perfiles>
+            <perfil>
+                <usuario>Emilio</usuario>
+                <idioma>Ingles</idioma>
+            </perfil>
+            <perfil>
+                <usuario>Joaquin</usuario>
+                <idioma>Aleman</idioma>
+            </perfil>
+        </perfiles>
+    </cuenta>
+
+    <contenido>
+        <peliculas>
+            <genero>
+                <nombre>Terror</nombre>
+                <titulo>
+                    <nombre>Winnie The Pooh</nombre>
+                    <duracion>120 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>La monja</nombre>
+                    <duracion>180 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Five Nights at Freddy'si</nombre>
+                    <duracion>140 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Annabelle</nombre>
+                    <duracion>210 minutos</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Accion</nombre>
+                <titulo>
+                    <nombre>Rapidos y Furiosos 15</nombre>
+                    <duracion>210 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Kingsman</nombre>
+                    <duracion>190 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Avengers</nombre>
+                    <duracion>230 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>John Wick</nombre>
+                    <duracion>101 minutos</duracion>
+                </titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero>
+                <nombre>Ciencia Ficcion</nombre>
+                <titulo>
+                    <nombre>Loki</nombre>
+                    <duracion>2 Temporadas</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Flash</nombre>
+                    <duracion>8 Temporadas</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Moon Knight</nombre>
+                    <duracion>1 Temporada</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Arrow</nombre>
+                    <duracion>7 Temporadas</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Comedia</nombre>
+                <titulo>
+                    <nombre>Malcolm in the Middle</nombre>
+                    <duracion>7 Temporadas</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>How I Met Your Mother</nombre>
+                    <duracion>9 Temporadas</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>31 minutos</nombre>
+                    <duracion>4 Temporadas</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Family Guy</nombre>
+                    <duracion>15 Temporadas</duracion>
+                </titulo>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>
