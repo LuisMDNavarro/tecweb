@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CatalogoVOD>
+    <cuenta correo ="carlosduti123@gmail.com">
+        <perfiles>
+            <perfil  usuario ="Emilio" lenguaje ="Ingles"/>
+            <perfil  usuario ="Joaquin" lenguaje ="Aleman"/>
+        </perfiles>
+    </cuenta>
+
+    <contenido>
+        <peliculas>
+            <genero nombre_genero = "Terror">
+                <titulo nombre = "Winnie The Pooh" duracion = "120 minutos" />
+                <titulo nombre = "La monja" duracion = "180 minutos" />
+                <titulo nombre = "Five Nights at Freddy's" duracion = "140 minutos" />
+                <titulo nombre = "Annabelle" duracion = "210 minutos" />
+            </genero>
+            <genero nombre_genero = "Accion">
+                <titulo nombre = "Rapidos y Furiosos 15" duracion = "210 minutos" />
+                <titulo nombre = "Kingsman" duracion = "190 minutos" />
+                <titulo nombre = "Avengers" duracion = "230 minutos" />
+                <titulo nombre = "John Wick" duracion = "101 minutos" />
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre_genero = "Ciencia Ficcion">
+                <titulo nombre = "Loki" duracion = "2 Temporadas" />
+                <titulo nombre = "Flash" duracion = "8 Temporadas" />
+                <titulo nombre = "Moon Knight" duracion = "1 Temporadas" />
+                <titulo nombre = "Arrow" duracion = "7 Temporadas" />
+            </genero>
+            <genero nombre_genero = "Comedia">
+                <titulo nombre = "Malcolm in the Middle" duracion = "7 Temporadas" />
+                <titulo nombre = "How I Met Your Mother" duracion = "9 Temporadas" />
+                <titulo nombre = "31 minutos" duracion = "4 Temporadas" />
+                <titulo nombre = "Family Guy" duracion = "15 Temporadas" />
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>
