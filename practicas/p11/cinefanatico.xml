@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <tarjeta noserie="1" visitas="100M" puntos="100">
+        <nombre>Loki</nombre>
+        <correo>luis@gmail.com</correo>
+        <telefono tipo="movil">2241098435</telefono>
+        <telefono tipo="casa">2241057281</telefono>
+    </tarjeta>
+</cinefanatico>
