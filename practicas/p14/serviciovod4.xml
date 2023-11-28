@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CatalogoVOD SYSTEM "serviciovod_ep.dtd">
+<CatalogoVOD>
+    <cuenta correo="luis.diaz.navarro.210@gmail.com">
+        <perfiles>
+            <perfil usuario="Luis M" idioma="Español"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas region="MEX">
+            <genero nombre="Accion">
+                <titulo duracion="02:04:00">Kingsman</titulo>
+                <titulo duracion="02:06:00">Kingsman: El circulo dorado</titulo>
+            </genero>
+            <genero nombre="Suspenso">
+                <titulo duracion="01:51:00">Hush</titulo>
+                <titulo duracion="01:42:00">No respires</titulo>
+            </genero>
+        </peliculas>
+        <series region = "MEX">
+            <genero nombre="Comedia">
+                <titulo duracion="00:40:00">Family Guy</titulo>
+                <titulo duracion="00:40:00">The Big Bang Theory</titulo>
+            </genero>
+            <genero nombre="Superheroes">
+                <titulo duracion="00:45:00">Loki</titulo>
+                <titulo duracion="00:50:00">Flash</titulo>
+            </genero>
+        </series>
+    </contenido>
+</CatalogoVOD>
