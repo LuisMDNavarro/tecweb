@@ -4,32 +4,87 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>HBO Max</title>
-                <style type="text/css">
-         			body {margin: 20px; 
-         			background-color: #C4DF9B;
-         			font-family: Verdana, Helvetica, sans-serif;
-         			font-size: 90%;}
-         			h1 {color: #005825;
-         			border-bottom: 1px solid #005825;}
-         			h2 {font-size: 1.2em;
-         			color: #4A0048;}
-         		</style>
+                <title>Prime video</title>
+                <link rel="icon" href="logo.png" type="image/x-icon"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"/>
             </head>
             <body>
-                <h2><xsl:value-of select="//header/@title"/></h2>
-                <ul>
-                    <xsl:for-each select="links/item">
-                        <li>
-                            <a>
-                                <xsl:attribute name="href">
-                                    <xsl:value-of select="./@href"/>
-                                </xsl:attribute>
-                                <xsl:value-of select="./@title"/>
-                            </a>
-                        </li>
-                    </xsl:for-each>
-                </ul>
+                <div class="p-3 bg-primary text-white text-center">
+                    <p style="text-align: center; font-size: 60px;"><img src="logo.png"
+                        alt="logo" width="100px" height="100px" class="rounded"/> <strong>Prime video</strong></p>
+                </div>
+                <div class="container mt-3">
+                    <table class="table table-bordered text-center table-hover">
+                        <thead>
+                            <tr class="table-success">
+                                <th colspan="4">Cuentas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-warning fw-bold">
+                                <td>Usuario</td>
+                                <td>Idioma</td>
+                            </tr>
+                            <xsl:for-each select="CatalogoVOD/cuenta/perfiles/perfil">
+                                <tr class="table-warning">
+                                    <td><xsl:value-of select="@usuario"/> </td>
+                                    <td><xsl:value-of select="@idioma"/> </td>
+                                </tr>
+                            </xsl:for-each>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container mt-3">
+                    <h2>Peliculas</h2>
+                    <table class="table table-bordered text-center table-hover">
+                        <thead>
+                            <tr class="table-success">
+                                <th colspan="4">Peliculas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-warning fw-bold">
+                                <td>Titulo</td>
+                                <td>Duración</td>
+                                <td>Género</td>
+                            </tr>
+                            <xsl:for-each select="//contenido/peliculas/genero/titulo">
+                                <tr class="table-warning">
+                                    <td> <xsl:value-of select="./text()"/> </td>
+                                    <td><xsl:value-of select="./@duracion"/> </td>
+                                    <td><xsl:value-of select="../@nombre"/> </td>
+                                </tr>
+                            </xsl:for-each>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="container mt-3">
+                    <h2>Series</h2>
+                    <table class="table table-bordered text-center table-hover">
+                        <thead>
+                            <tr class="table-success">
+                                <th colspan="4">Series</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-warning fw-bold">
+                                <td>Titulo</td>
+                                <td>Duración</td>
+                                <td>Género</td>
+                            </tr>
+                            <xsl:for-each select="//contenido/series/genero/titulo">
+                                <tr class="table-warning">
+                                    <td> <xsl:value-of select="./text()"/> </td>
+                                    <td><xsl:value-of select="./@duracion"/> </td>
+                                    <td><xsl:value-of select="../@nombre"/> </td>
+                                </tr>
+                            </xsl:for-each>
+                        </tbody>
+                    </table>
+                </div>
             </body>
         </html>
     </xsl:template>
